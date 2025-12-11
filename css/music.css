@@ -3,9 +3,10 @@
 /* container */
 .music-player {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 18px;
+  top:auto;
+  left: auto;
+  right: 20px;
+  bottom: 20px;
   width: calc(100% - 40px);
   max-width: 720px;
   background: linear-gradient(180deg,#FFF7F0, #FFF3F7);
@@ -181,86 +182,28 @@
 
 /* UNIVERSAL MINIMIZE BUTTON */
 /* minimize button */
-.mp-minimize {
-  position: absolute;
-  right: 10px;
-  top: -12px;
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 8px;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  z-index: 999999;
-}
-
-/* minimized mode */
-.music-player.mp-mini {
-  height: 34px;
-  padding: 4px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.music-player.mp-mini .player-left,
-.music-player.mp-mini .player-controls,
-.music-player.mp-mini .player-right {
-  display: none !important;
-}
-
-/* show only small dot or text */
-.music-player.mp-mini::after {
-  content: "Music Playing…";
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-/* mini mode works on phone too */
-@media (max-width:420px) {
-  .mp-minimize {
-    top: -14px;
-    right: 6px;
-    width: 26px;
-    height: 26px;
-    font-size: 17px;
-  }
-}
-
-/* Floating bubble when minimized */
-.music-player.mp-mini {
+.music-player.minimized {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
+  top: 20px;  /* default position */
+  left: 20px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: #d8c6d8;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 8px;
   cursor: grab;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999999;
+  overflow: hidden;
+  z-index: 99999;
 }
 
-/* Hide full UI inside bubble */
-.music-player.mp-mini .player-left,
-.music-player.mp-mini .player-controls,
-.music-player.mp-mini .player-right {
+.music-player.minimized .player-left,
+.music-player.minimized .player-controls,
+.music-player.minimized .player-right {
   display: none !important;
 }
 
-.music-player.mp-mini .minimize-btn {
-  font-size: 22px;
-  padding: 0;
-  margin: 0;
-}
+
+
+
 
 
 
