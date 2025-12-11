@@ -232,6 +232,38 @@
   }
 }
 
+/* Floating bubble when minimized */
+.music-player.mp-mini {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #d8c6d8;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: grab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+/* Hide full UI inside bubble */
+.music-player.mp-mini .player-left,
+.music-player.mp-mini .player-controls,
+.music-player.mp-mini .player-right {
+  display: none !important;
+}
+
+.music-player.mp-mini .minimize-btn {
+  font-size: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+
+
 
 
 
