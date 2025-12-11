@@ -1,5 +1,5 @@
 /* music.js - scrapbook pastel global music player */
-
+let playerEl; // GLOBAL
 /* ---------- CONFIG ---------- */
 const tracks = [
   { id: 'magic', file: 'music/magic.mp3', title: 'Magic' },
@@ -54,7 +54,7 @@ function createPlayerElement() {
       </div>
     </div>
 
-    <button class="mp-minimize" id="mp-minimize">—</button>
+    <button class="minimized" id="minimized">—</button>
   `;
 
   document.body.appendChild(wrap);
@@ -76,20 +76,20 @@ function createPlayerElement() {
   document.body.appendChild(audio);
 
   // build UI; we'll hide it on index
-  const playerEl = createPlayerElement();
+  playerEl = createPlayerElement();
   const isIndex = (document.body.dataset.page === 'index');
   // MINIMIZE BUTTON
-  const miniBtn = document.getElementById("mp-minimize");
+  const miniBtn = document.getElementById("minimized");
   let minimized = false;
 
   miniBtn.addEventListener("click", () => {
       minimized = !minimized;
 
       if (minimized) {
-          playerEl.classList.add("mp-mini");
+          playerEl.classList.add("minimized");
           miniBtn.textContent = "+";
       } else {
-          playerEl.classList.remove("mp-mini");
+          playerEl.classList.remove("minimized");
           miniBtn.textContent = "—";
       }
   });
@@ -369,6 +369,7 @@ const observer = new MutationObserver(() => {
     }
 });
 observer.observe(playerEl, { attributes: true, attributeFilter: ["class"] });
+
 
 
 
