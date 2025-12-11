@@ -164,3 +164,29 @@
 
 /* hidden class */
 .music-hidden { display:none !important; }
+/* ===== MINI PLAYER MODE ===== */
+.music-player.minimized {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.music-player.minimized .song-info,
+.music-player.minimized .music-controls {
+  display: none;
+}
+
+.minimize-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+}
+
