@@ -1,0 +1,148 @@
+/* ==============================
+   SCRAPBOOK GALLERY — CLEAN VERSION
+   ============================== */
+
+body {
+  margin: 0;
+  background: #FFF7F0;
+  color: #5c4d4d;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Top navigation */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 12px 0;
+  background: #FDECEF;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.top-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #5c4d4d;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.top-nav a:hover {
+  background: #f7ddee;
+}
+
+.top-nav a.active {
+  background: #D8C6D8;
+  color: #3c2c2c;
+  font-weight: 700;
+}
+
+/* Page Title */
+.title {
+  text-align: center;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 36px;
+  margin: 25px 0;
+}
+
+/* Header upload section */
+.gallery-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #FDECEF;  /* tambah background supaya nampak frame */
+  border-bottom: 1px solid rgba(0,0,0,0.05); /* nampak kemas */
+  position: sticky;
+  top: 56px; /* supaya berada di bawah navigation */
+  z-index: 150;
+}
+
+#imageUpload, #captionInput {
+  padding: 10px;
+  border: 1px solid #e3d1e3;
+  border-radius: 10px;
+  outline: none;
+  background: white;
+}
+
+#uploadBtn {
+  padding: 10px 20px;
+  background: #D8C6D8;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#uploadBtn:hover {
+  background: #cdb5cd;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 15px;
+  justify-content: center;
+}
+
+/* Polaroid card */
+.polaroid {
+  background: #ffffff;
+  padding: 12px;
+  width: 190px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s ease;
+  transform: rotate(-2deg);
+  position: relative;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Caption */
+.caption {
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* Delete button */
+.deleteBtn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: #ff7b7b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.deleteBtn:hover {
+  background: #e26666;
+}
+
+/* Remove diary style completely */
+.diary {
+  display: none !important;
+}

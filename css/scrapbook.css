@@ -1,0 +1,45 @@
+.cover-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cover-container {
+  text-align: center;
+  padding: 40px;
+  background: #FDECEF;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.title {
+  font-size: 32px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.subtitle {
+  margin-top: -10px;
+  font-size: 18px;
+  opacity: .8;
+}
+
+.open-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #D8C6D8;
+  border-radius: 8px;
+  color: #4a3b3b;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.doodle {
+  position: absolute;
+  font-size: 28px;
+}
+
+.heart { left: -20px; top: 20px; }
+.star { right: -20px; bottom: 30px; }
+.sparkle { top: -10px; right: 40%; }

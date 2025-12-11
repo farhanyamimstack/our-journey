@@ -1,0 +1,279 @@
+/* ===== Timeline Page Styling ===== */
+
+/* Base page setup */
+body {
+  margin: 0;
+  padding: 0;
+  background: #FFF7F0;
+  font-family: "Cormorant Garamond", serif;
+  color: #5c4d4d;
+}
+
+/* Header */
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  background: #FDECEF;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.back-btn {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4a3b3b;
+  margin-right: auto;
+}
+
+.nav-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Main container */
+.timeline-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* Page Title */
+.title {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4a3b3b;
+}
+
+/* Counter Box */
+.counter-box {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.odo {
+  background: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  position: relative;
+  min-width: 100px;
+}
+
+.num {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Tape decoration */
+.odo::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 18px;
+  background: linear-gradient(90deg, #f7e9f0, #f1dce8);
+  border-radius: 4px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-6deg);
+  opacity: 0.9;
+}
+
+/* Notes Section */
+.notes-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* Scrapbook note styling */
+.note {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+  position: relative;
+  transform: rotate(-1.5deg);
+}
+
+.note h3 {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.note p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Doodle hearts */
+.note::after {
+  content: "♡";
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 22px;
+  color: #e1b7d3;
+  opacity: 0.7;
+  transform: rotate(10deg);
+}
+
+/* Tape on notes */
+.note::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  background: linear-gradient(90deg, #FDECEF, #F9D7E8);
+  border-radius: 4px;
+  top: -12px;
+  left: 20px;
+  transform: rotate(4deg);
+}
+
+/* NEXT BUTTON */
+.next-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 28px;
+  background: #D8C6D8;
+  color: #4a3b3b;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(216,198,216,0.4);
+}
+
+.next-btn:hover {
+  filter: brightness(1.05);
+}
+
+/* Extra doodles on the page */
+.timeline-container::before {
+  content: "✧ ✦ ✧";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-size: 26px;
+  opacity: 0.25;
+  color: #D8C6D8;
+}
+
+.timeline-container::after {
+  content: "♡ ✧";
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-size: 26px;
+  opacity: 0.25;
+  color: #e6cfe0;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+  .counter-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .odo {
+    width: 140px;
+  }
+  .title {
+    font-size: 26px;
+  }
+}
+
+/* ==== Scrapbook Note Images ==== */
+.note-image-wrapper {
+  width: 100%;
+  margin: 10px 0 12px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.note-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  transform: rotate(-1deg);
+  background: #fff;
+}
+
+/* ===== Polaroid scrapbook image style ===== */
+.note-polaroid {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  background: white;
+  padding: 10px 10px 30px 10px; /* bottom area for polaroid effect */
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+/* Polaroid hover effect */
+.note-polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+/* Fake washi tape on polaroid */
+.note-polaroid::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  width: 60px;
+  height: 22px;
+  background: linear-gradient(90deg, #f9dbe9, #f7cfe3);
+  opacity: 0.85;
+  border-radius: 4px;
+  transform: rotate(-5deg);
+}
+
+/* ===== TOP NAV BAR ===== */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 12px 0;
+  background: #FDECEF;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #5c4d4d;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.top-nav a:hover {
+  background: #f7ddee;
+}
+
+.top-nav a.active {
+  background: #D8C6D8;
+  color: #3c2c2c;
+  font-weight: 700;
+}

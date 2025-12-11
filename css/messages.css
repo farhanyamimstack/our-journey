@@ -1,0 +1,112 @@
+/* ==============================
+   MESSAGES PAGE — CLEAN + NAVIGATION SUPPORT
+   ============================== */
+
+body {
+  background: #FFF7F0;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  color: #5c4d4d;
+}
+
+/* TOP NAVIGATION (same style as other pages) */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 12px 0;
+  background: #FDECEF;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.top-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #5c4d4d;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.top-nav a:hover {
+  background: #f7ddee;
+}
+
+.top-nav a.active {
+  background: #D8C6D8;
+  color: #3c2c2c;
+  font-weight: 700;
+}
+
+/* MESSAGE INPUT HEADER (stick BELOW nav) */
+.messages-header {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: #FDECEF;
+  position: sticky;
+  top: 56px; /* ⇠ PUSH HEADER BELOW NAV */
+  z-index: 9;
+}
+
+#messageInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #e3d1e3;
+}
+
+#sendMessageBtn {
+  padding: 10px 18px;
+  background: #D8C6D8;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#sendMessageBtn:hover {
+  background: #c8b1c8;
+}
+
+/* MESSAGE LIST */
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* INDIVIDUAL MESSAGE */
+.message-card {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  font-size: 16px;
+}
+
+.message-me {
+  align-self: flex-end;
+  background: #FFE0EC;
+}
+
+.message-them {
+  align-self: flex-start;
+  background: #E7ECFF;
+}
+
+.message-author {
+  font-size: 12px;
+  opacity: 0.55;
+  margin-bottom: 4px;
+  font-family: "Shadows Into Light", cursive;
+}
