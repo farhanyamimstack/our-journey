@@ -201,16 +201,24 @@
 
 /* minimized mode */
 .music-player.mp-mini {
-  height: 40px;
-  overflow: hidden;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  height: 34px;
+  padding: 4px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .music-player.mp-mini .player-left,
 .music-player.mp-mini .player-controls,
 .music-player.mp-mini .player-right {
   display: none !important;
+}
+
+/* show only small dot or text */
+.music-player.mp-mini::after {
+  content: "Music Playing…";
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 /* mini mode works on phone too */
@@ -223,6 +231,7 @@
     font-size: 17px;
   }
 }
+
 
 
 
