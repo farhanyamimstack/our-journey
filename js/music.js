@@ -312,4 +312,64 @@ function createPlayerElement() {
   
 })();
 
+// ===================
+// DRAGGABLE BUBBLE
+// ===================
+let posX = 0, posY = 0, dragging = false;
+
+function enableDrag(el) {
+    el.addEventListener("mousedown", startDrag);
+    el.addEventListener("touchstart", startDrag, { passive: false });
+}
+
+function startDrag(e) {
+    dragging = true;
+    posX = e.clientX || e.touches[0].clientX;
+    posY = e.clientY || e.touches[0].clientY;
+
+    document.addEventListener("mousemove", drag);
+    document.addEventListener("mouseup", stopDrag);
+
+    document.addEventListener("touchmove", drag, { passive: false });
+    document.addEventListener("touchend", stopDrag);
+}
+
+function drag(e) {
+    if (!dragging) return;
+
+    e.preventDefault();
+
+    const x = e.clientX || e.touches[0].clientX;
+    const y = e.clientY || e.touches[0].clientY;
+
+    const dx = x - posX;
+    const dy = y - posY;
+
+    const rect = playerEl.getBoundingClientRect();
+
+    playerEl.style.left = rect.left + dx + "px";
+    playerEl.style.top = rect.top + dy + "px";
+
+    posX = x;
+    posY = y;
+}
+
+function stopDrag() {
+    dragging = false;
+    document.removeEventListener("mousemove", drag);
+    document.removeEventListener("mouseup", stopDrag);
+    document.removeEventListener("touchmove", drag);
+    document.removeEventListener("touchend", stopDrag);
+}
+
+// Only draggable when minimized
+const observer = new MutationObserver(() => {
+    if (playerEl.classList.contains("mp-mini")) {
+        enableDrag(playerEl);
+    }
+});
+observer.observe(playerEl, { attributes: true, attributeFilter: ["class"] });
+
+
+
 
