@@ -30,6 +30,7 @@ function createPlayerElement() {
 
   wrap.innerHTML = `
     <div class="player-left">
+      <button class="minimize-btn" id="mp-min">—</button>
       <div class="sticker">M</div>
     </div>
 
@@ -243,6 +244,34 @@ function createPlayerElement() {
     saveState(state);
   });
 
+  // MINIMIZE LOGIC
+  const minBtn = document.getElementById("mp-min");
+
+  minBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // supaya tak trigger click lain
+
+      const box = document.getElementById("musicPlayer");
+
+      box.classList.toggle("minimized");
+
+      // tukar ikon
+      minBtn.textContent = box.classList.contains("minimized") ? "◖" : "—";
+  });
+
+  // click bubble to restore
+    document.getElementById("musicPlayer").addEventListener("click", (e) => {
+      const box = e.currentTarget;
+
+      if (box.classList.contains("minimized")) {
+          // kalau click bubble → expand
+          if (e.target !== minBtn) {
+              box.classList.remove("minimized");
+              minBtn.textContent = "—";
+          }
+      }
+  });
+
+
   // external API: if index later navigates to other page and we need to unhide & unmute
   window.ojMusic = {
     showPlayer: function() {
@@ -263,4 +292,6 @@ function createPlayerElement() {
     // if state says paused, show paused state
     setPlayIcon(!state.isPaused);
   }
+  
 })();
+
