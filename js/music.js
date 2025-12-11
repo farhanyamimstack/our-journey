@@ -53,6 +53,8 @@ function createPlayerElement() {
         <button class="heart-btn" id="mp-heart" title="Send love">💗</button>
       </div>
     </div>
+
+    <button class="mp-minimize" id="mp-minimize">—</button>
   `;
 
   document.body.appendChild(wrap);
@@ -76,6 +78,21 @@ function createPlayerElement() {
   // build UI; we'll hide it on index
   const playerEl = createPlayerElement();
   const isIndex = (document.body.dataset.page === 'index');
+  // MINIMIZE BUTTON
+  const miniBtn = document.getElementById("mp-minimize");
+  let minimized = false;
+
+  miniBtn.addEventListener("click", () => {
+      minimized = !minimized;
+
+      if (minimized) {
+          playerEl.classList.add("mp-mini");
+          miniBtn.textContent = "+";
+      } else {
+          playerEl.classList.remove("mp-mini");
+          miniBtn.textContent = "—";
+      }
+  });
 
   // initial track
   let current = state.currentTrack || 0;
@@ -294,4 +311,5 @@ function createPlayerElement() {
   }
   
 })();
+
 
