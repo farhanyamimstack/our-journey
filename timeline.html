@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline — Our Journal</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/timeline.css">
+
+  <!-- Handwritten Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/music.css">
+</head>
+
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="nav">
+    <a href="index.html" class="back-btn">← Back</a>
+    <div class="nav-title">Timeline</div>
+  </header>
+
+  <nav class="top-nav">
+    <a href="index.html">Cover</a>
+    <a href="timeline.html" class="active">Timeline</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="messages.html">Messages</a>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <section class="timeline-container">
+
+    <h1 class="title">Our Timeline</h1>
+
+    <!-- Counter Box -->
+    <div class="counter-box">
+
+      <div class="odo">
+        <div class="num" id="years">0</div>
+        <div class="label">Years</div>
+      </div>
+
+      <div class="odo">
+        <div class="num" id="months">0</div>
+        <div class="label">Months</div>
+      </div>
+
+      <div class="odo">
+        <div class="num" id="days">0</div>
+        <div class="label">Days</div>
+      </div>
+
+    </div>
+
+    <!-- Scrapbook Notes -->
+    <div class="notes-section">
+
+      <div class="note">
+        <h3>How long we were together</h3>
+        <p>However long weve known each other, it doesnt matter, because my heart never learned how to let you go. Even in the moments we broke, the feelings stayed. And they still believe in you… in us.</p>
+        <p>Air mata jatuh di hujung malam,</p>
+        <p>Kenangan lama datang menyapa.</p>
+        <p>Sejauh mana pun kita pernah hilang,</p>
+        <p>Rasa ini tetap pulang… mencari awak semula.</p>
+      </div>
+
+      <div class="note">
+        <h3>Our first date</h3>
+
+        <div class="note-polaroid">
+          <img src="images/first-date.jpg" class="note-image" alt="Our first date photo">
+        </div>
+
+        <p>The painting in the car — the mess, the laughter, the moment everything felt natural.</p>
+      </div>
+
+
+      <div class="note">
+        <h3>Our second date</h3>
+
+        <div class="note-polaroid">
+         <img src="images/second-date.jpg" class="note-image" alt="Our last chapter photo">
+        </div>
+
+        <br>
+
+        <p>Second date, but still pretending Im not nervous.</p>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <!-- JS -->
+  <script src="js/counter.js"></script>
+
+  <script src="js/music.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+
+</body>
+</html>
