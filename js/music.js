@@ -364,11 +364,12 @@ function stopDrag() {
 
 // Only draggable when minimized
 const observer = new MutationObserver(() => {
-    if (playerEl.classList.contains("mp-mini")) {
+    if (playerEl.classList.contains("minimized")) {
         enableDrag(playerEl);
     }
 });
 observer.observe(playerEl, { attributes: true, attributeFilter: ["class"] });
+
 
 
 
