@@ -3,10 +3,11 @@
 /* container */
 .music-player {
   position: fixed;
-  top:auto;
-  left: auto;
-  right: 20px;
-  bottom: 20px;
+
+  /* DEFAULT POSITION UNTUK MODE NORMAL */
+  top: 80%;       /* starting location */
+  left: 20px;     /* boleh diubah oleh drag */
+
   width: calc(100% - 40px);
   max-width: 720px;
   background: linear-gradient(180deg,#FFF7F0, #FFF3F7);
@@ -200,6 +201,7 @@
 .music-player.minimized .player-right {
   display: none !important;
 }
+
 
 
 
