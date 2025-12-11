@@ -179,14 +179,28 @@
   display: none;
 }
 
+/* UNIVERSAL MINIMIZE BUTTON */
 .minimize-btn {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  font-size: 14px;
-  background: none;
+  top: 8px;
+  right: 8px;
+  z-index: 9999; /* sentiasa depan */
+  background: rgba(255, 255, 255, 0.6);
   border: none;
+  font-size: 20px;
+  padding: 4px 8px;
+  border-radius: 6px;
   cursor: pointer;
-  color: #444;
+  backdrop-filter: blur(5px);
+}
+
+/* SMALL SCREEN FIX — PHONE */
+@media (max-width: 600px) {
+  .minimize-btn {
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+    padding: 3px 6px;
+  }
 }
 
